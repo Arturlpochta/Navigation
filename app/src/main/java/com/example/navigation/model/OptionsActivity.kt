@@ -1,7 +1,6 @@
 package com.example.navigation.model
 
 import android.app.Activity
-import com.example.navigation.databinding.ActivityOptionsBinding
 import android.content.Intent
 import com.example.navigation.R
 import com.example.navigation.model.Options
@@ -9,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.example.navigation.databinding.ActivityOptionsBinding
 
 
 class OptionsActivity : BaseActivity() {
@@ -36,7 +36,7 @@ class OptionsActivity : BaseActivity() {
     }
 
     private fun setupSpinner() {
-        boxCountItems = (1..6).map { BoxCountItem(it, resources.getQuantityString(R.plurals.boxes, it, it)) }
+        boxCountItems = (1..6).map { BoxCountItem(it, resources.getQuantityString( it, it)) }
         adapter = ArrayAdapter(
             this,
             R.layout.item_spinner,

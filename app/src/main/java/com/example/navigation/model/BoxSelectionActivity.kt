@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.navigation.R
-import com.example.navigation.activity.model.Options
 import com.example.navigation.databinding.ActivityBoxSelectionBinding
 import com.example.navigation.databinding.ItemBoxBinding
 import kotlin.math.max
