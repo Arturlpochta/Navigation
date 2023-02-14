@@ -4,7 +4,6 @@ import com.example.navigation.databinding.ActivityMenuBinding
 import android.app.Activity
 import android.content.Intent
 import com.example.navigation.R
-import com.example.navigation.activity.model.Options
 import com.example.navigation.databinding.ActivityOptionsBinding
 
 
