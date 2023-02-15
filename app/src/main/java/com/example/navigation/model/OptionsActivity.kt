@@ -1,9 +1,7 @@
 package com.example.navigation.model
 
-import android.app.Activity
 import android.content.Intent
 import com.example.navigation.R
-import com.example.navigation.model.Options
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView

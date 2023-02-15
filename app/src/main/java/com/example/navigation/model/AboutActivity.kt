@@ -2,8 +2,6 @@ package com.example.navigation.model
 
 import android.os.Bundle
 import com.example.navigation.BuildConfig
-import com.example.navigation.BuildConfig.VERSION_CODE
-import com.example.navigation.BuildConfig.VERSION_NAME
 import com.example.navigation.databinding.ActivityAboutBinding
 
 class AboutActivity : BaseActivity() {
@@ -14,7 +12,7 @@ class AboutActivity : BaseActivity() {
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            binding = ActivityAboutBinding.inflate(layoutInflater).also { setContentView(it.root) }
+            binding = ActivityAboutBinding.inflate(layoutInflater).also { this.setContentView(it.root) }
             binding.versionNameTextView.text = BuildConfig.VERSION_NAME
             binding.versionCodeTextView.text = BuildConfig.VERSION_CODE.toString()
             binding.okButton.setOnClickListener { onOkPressed() }
