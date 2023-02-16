@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.navigation.model">
+    package="com.example.navigation">
 
     <application
         android:allowBackup="true"
@@ -12,7 +11,7 @@
         android:theme="@style/Theme.Navigation">
 
         <activity
-            android:name=".activity.MenuActivity"
+            android:name=".model.MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,24 +20,24 @@
         </activity>
 
         <activity
-            android:name=".activity.BoxActivity"
+            android:name=".model.BoxActivity"
             android:label="@string/box"
-            android:parentActivityName=".activity.BoxSelectionActivity" />
+            android:parentActivityName=".model.BoxSelectionActivity" />
 
         <activity
-            android:name=".activity.OptionsActivity"
+            android:name=".model.OptionsActivity"
             android:label="@string/options"
-            android:parentActivityName=".activity.MenuActivity" />
+            android:parentActivityName=".model.MenuActivity" />
 
         <activity
-            android:name=".activity.BoxSelectionActivity"
+            android:name=".model.BoxSelectionActivity"
             android:label="@string/select_box"
-            android:parentActivityName=".activity.MenuActivity" />
+            android:parentActivityName=".model.MenuActivity" />
 
         <activity
-            android:name=".activity.AboutActivity"
+            android:name=".model.AboutActivity"
             android:label="@string/about"
-            android:parentActivityName=".activity.MenuActivity" />
+            android:parentActivityName=".model.MenuActivity" />
 
     </application>
 

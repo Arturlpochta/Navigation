@@ -4,18 +4,19 @@ import android.app.Activity
 import com.example.navigation.databinding.ActivityOptionsBinding
 import android.content.Intent
 import com.example.navigation.R
-import com.example.navigation.model.Options
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 
 
+
 class OptionsActivity : BaseActivity() {
+
 
     private lateinit var binding: ActivityOptionsBinding
 
-    private lateinit var options: com.example.navigation.model.Options
+    private lateinit var options: Options
 
     private lateinit var boxCountItems: List<BoxCountItem>
     private lateinit var adapter: ArrayAdapter<BoxCountItem>
@@ -29,10 +30,16 @@ class OptionsActivity : BaseActivity() {
                 throw IllegalArgumentException("You need to specify EXTRA_OPTIONS to launch this activity")
 
         setupSpinner()
+        setupCheckBox()
         updateUi()
 
         binding.cancelButton.setOnClickListener { onCancelPressed() }
         binding.confirmButton.setOnClickListener { onConfirmPressed() }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(KEY_OPTIONS,options)
     }
 
     private fun setupSpinner() {
@@ -55,6 +62,12 @@ class OptionsActivity : BaseActivity() {
         }
     }
 
+    private fun setupCheckBox(){
+        binding.enableTimerCheckBox.setOnClickListener {
+            options = options.copy(isTimerEnabled = binding.enableTimerCheckBox.isChecked)
+        }
+    }
+
     private fun updateUi() {
         binding.enableTimerCheckBox.isChecked = options.isTimerEnabled
 
@@ -67,17 +80,15 @@ class OptionsActivity : BaseActivity() {
     }
 
     private fun onConfirmPressed() {
-        options = options.copy(isTimerEnabled = binding.enableTimerCheckBox.isChecked)
         val intent = Intent()
         intent.putExtra(EXTRA_OPTIONS, options)
-        setResult(RESULT_OK, intent)
+        setResult(Activity.RESULT_OK, intent)
         finish()
     }
 
     companion object {
-        const val EXTRA_OPTIONS = "EXTRA_OPTIONS"
-
-        private const val KEY_OPTIONS = "KEY_OPTIONS"
+        @JvmStatic val EXTRA_OPTIONS = "EXTRA_OPTIONS"
+        @JvmStatic private val KEY_OPTIONS = "KEY_OPTIONS"
     }
 
     class BoxCountItem(

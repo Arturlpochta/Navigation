@@ -1,11 +1,7 @@
 package com.example.navigation.model
 import android.os.Bundle
 import com.example.navigation.databinding.ActivityMenuBinding
-import android.app.Activity
 import android.content.Intent
-import com.example.navigation.R
-import com.example.navigation.activity.model.Options
-import com.example.navigation.databinding.ActivityOptionsBinding
 
 
 class MenuActivity : BaseActivity() {
@@ -47,7 +43,7 @@ class MenuActivity : BaseActivity() {
     private fun onOptionsPressed() {
         val intent = Intent(this, OptionsActivity::class.java)
         intent.putExtra(OptionsActivity.EXTRA_OPTIONS, options)
-        startActivityForResult(intent, OPTIONS_REQUEST_CODE)
+        startActivityForResult(intent , OPTIONS_REQUEST_CODE)
     }
 
     private fun onAboutPressed() {
@@ -61,7 +57,8 @@ class MenuActivity : BaseActivity() {
 
 
     private companion object {
-        const val KEY_OPTIONS = "OPTIONS"
-        const val OPTIONS_REQUEST_CODE = 1
+        @JvmStatic private val KEY_OPTIONS = "OPTIONS"
+        @JvmStatic private val OPTIONS_REQUEST_CODE = 1
     }
+
 }

@@ -32,11 +32,12 @@
     <string name="done">Done</string>
     <string name="congratulations">Congratulations!</string>
     <string name="done_icon">Done icon</string>
-<!--    <plurals name="boxes">-->
-<!--    <item quantity="zero">%1$d boxes</item>-->
-<!--    <item quantity="one">%1$d box</item>-->
-<!--    <item quantity="two">%1$d boxes</item>-->
-<!--    <item quantity="few">%1$d boxes</item>-->
-<!--    <item quantity="many">%1$d boxes</item>-->
-<!--    <item quantity="other">%1$d boxes</item>-->
+    <plurals name="boxes">
+    <item quantity="zero">%1$d boxes</item>
+    <item quantity="one">%1$d box</item>
+    <item quantity="two">%1$d boxes</item>
+    <item quantity="few">%1$d boxes</item>
+    <item quantity="many">%1$d boxes</item>
+    <item quantity="other">%1$d boxes</item>
+    </plurals>
 </resources>
